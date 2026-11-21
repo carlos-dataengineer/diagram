@@ -1,0 +1,13 @@
+name: HTML sanity check
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check application file exists
+        run: test -s app/index.html
+      - name: Check Skill manifest exists
+        run: test -s SKILL.md

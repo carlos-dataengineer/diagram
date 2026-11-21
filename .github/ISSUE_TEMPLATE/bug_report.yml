@@ -1,0 +1,22 @@
+name: Bug report
+description: Reportar um problema no Diagran
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Descrição
+      description: O que aconteceu?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
