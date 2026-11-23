@@ -82,6 +82,8 @@ jobs:
         shell: powershell
         run: |
           $env:DIAGRAN_NO_OPEN = '1'
+          # baixa o proprio branch testado (em PR, a main ainda nao tem a mudanca)
+          $env:DIAGRAN_REF = '${{ github.head_ref || github.ref_name }}'
           Get-Content .\install.ps1 -Raw | Invoke-Expression
       - name: Conferir arquivos
         shell: powershell
