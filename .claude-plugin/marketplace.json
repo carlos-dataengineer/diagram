@@ -1,0 +1,14 @@
+{
+  "name": "diagran",
+  "owner": { "name": "carlos-dataengineer", "url": "https://github.com/carlos-dataengineer" },
+  "metadata": { "description": "Marketplace do Diagran, editor de fluxogramas, pipelines e modelos ER." },
+  "plugins": [
+    {
+      "name": "diagran",
+      "source": "./",
+      "description": "Editor visual de fluxogramas, pipelines de dados, arquiteturas e modelos ER entregue como artefato no Claude.",
+      "version": "1.1.0",
+      "license": "MIT"
+    }
+  ]
+}

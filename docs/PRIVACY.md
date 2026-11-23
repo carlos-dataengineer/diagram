@@ -1,8 +1,9 @@
 # Privacidade e dados
 
-- Os modelos e registros demonstrativos incluídos no projeto são fictícios.
-- O modo padrão salva diagramas no armazenamento local do navegador.
-- O código tenta detectar capacidades opcionais do host Claude para IA, downloads e persistência de conta.
-- Sem essas capacidades, o editor permanece utilizável em modo local.
-- Diagramas podem conter dados inseridos pelo próprio usuário; evite incluir segredos, tokens ou informações pessoais em arquivos compartilhados.
-- A integração opcional de nuvem depende do ambiente host e não é um serviço autônomo oferecido pelo repositório.
+- Os modelos, exemplos e imagens do projeto usam **dados fictícios**.
+- Por padrão, os diagramas ficam no `localStorage` do navegador. Nada é enviado a servidores.
+- No artefato do Claude, os diagramas também são guardados na conta da pessoa, em `data/users/<id>/diagrams`, um espaço privado: nem quem publicou o artefato lê os diagramas de outra pessoa.
+- A geração por IA (`sample`) só existe no Claude e só é chamada quando a pessoa clica em **Gerar**. O texto enviado é a descrição digitada.
+- A única requisição externa do editor é a fonte do Google Fonts.
+- O instalador só copia arquivos locais; não coleta nem envia dados.
+- Diagramas podem conter o que a pessoa digitar: evite segredos, tokens e dados pessoais em arquivos compartilhados.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Diagran"
+  short_description: "Abre o editor de fluxogramas, pipelines de dados, arquiteturas e modelos ER"
+  default_prompt: "Use $diagran para abrir o Diagran e desenhar um pipeline Bronze → Silver → Gold de exemplo."
+policy:
+  allow_implicit_invocation: true

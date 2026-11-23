@@ -1,0 +1,10 @@
+{
+  "name": "diagran",
+  "version": "1.1.0",
+  "description": "Editor visual de fluxogramas, pipelines de dados, arquiteturas e modelos ER entregue como artefato no Claude.",
+  "author": { "name": "carlos-dataengineer", "url": "https://github.com/carlos-dataengineer" },
+  "homepage": "https://github.com/carlos-dataengineer/diagram",
+  "repository": "https://github.com/carlos-dataengineer/diagram",
+  "license": "MIT",
+  "keywords": ["diagrama", "fluxograma", "pipeline", "medallion", "modelo-er", "mermaid", "artefato", "skill"]
+}
