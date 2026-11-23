@@ -2,28 +2,31 @@
 
 ## Editor
 - Área de desenho SVG com grade opcional e encaixe.
-- Zoom, ajuste à tela, pan e navegação.
-- Seleção individual e múltipla, arraste, redimensionamento e edição inline.
-- Desfazer/refazer, duplicação e controle de ordem.
+- Zoom, ajuste à tela, pan (Espaço, botão do meio, toque) e pinça no celular.
+- Seleção individual, múltipla e por área; arraste, redimensionamento e edição inline.
+- Desfazer/refazer, copiar/colar, duplicação e ordem (frente/trás).
+- Alinhar, distribuir, mesmo tamanho e agrupar em contêiner.
 
 ## Elementos
-- Formas básicas, terminadores, decisões, documentos, nuvem, ator, contêiner, tabela e fila.
-- Paleta de cores, preenchimento, contorno, fonte, opacidade e traçado.
-- Elementos de engenharia de dados para ilustrar pipelines e camadas.
+- Retângulo, arredondado, elipse, decisão, entrada/saída, hexágono, banco de dados, fila/stream, documento, nuvem, nota, início/fim, texto, ator, tabela ER e contêiner.
+- 12 estilos de cor (inclusive Bronze, Silver e Gold), preenchimento, contorno, fonte, negrito, espessura, tracejado e opacidade.
 
 ## Conexões
-- Conexões entre elementos por pontos de ancoragem.
-- Rotas ortogonais, retas e curvas.
-- Setas, cardinalidade, tracejado e rótulos.
-- Criação rápida de uma nova etapa ao conectar para uma área vazia.
+- Pontos de ancoragem; rotas ortogonais, retas e curvas.
+- Setas, cardinalidade (ER), tracejado e rótulos.
+- Soltar no vazio cria a próxima etapa já conectada.
 
-## Geração textual
-- Parser de sintaxe inspirada em Mermaid e declarações simples de tabelas.
-- Layout automático horizontal e vertical.
-- Geração assistida por IA apenas quando o host fornece a capacidade `sample`; o modo texto continua disponível sem IA.
+## Geração
+- Texto estilo Mermaid e declarações de tabelas viram diagrama, com layout automático.
+- Colar texto ou JSON no canvas gera ou importa direto.
+- IA (descrição em português) no artefato do Claude.
+- Diagrama pronto entregue pela skill (`window.DIAGRAN_TEXT`).
 
 ## Arquivos
-- Salvamento local automático.
-- Biblioteca local de diagramas.
-- Importação de JSON do Diagran, XML/draw.io e texto compatível.
-- Exportação PNG, SVG, JSON e Mermaid.
+- Salvamento automático e biblioteca de diagramas.
+- Importa JSON do Diagran, XML/draw.io e texto Mermaid.
+- Exporta PNG (2x), SVG, JSON e Mermaid.
+
+## Distribuição
+- Skill para Claude Code, Codex e agentes; plugin do Claude Code.
+- Instalação e desinstalação em um comando (Windows, macOS, Linux).

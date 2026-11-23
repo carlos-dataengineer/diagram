@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="pt-BR"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Diagran</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -848,7 +848,7 @@ function tplMedallion(){
   const E=(from,to,text="",st={},fs=null,ts=null)=>({id:"e"+uid(),from,to,text,fromSide:fs,toSide:ts,style:st});
   return{nodes,edges:[E("a","b","ingestão"),E("f","b","",{dashed:true},"right","left"),E("b","s","limpeza"),E("s","q","",{},"bottom","top"),E("q","g","sim",{},"right","bottom"),E("q","b","não · reprocessar",{dashed:true},"left","bottom"),E("g","d"),E("g","o","carga JDBC",{route:"curve"},"right","left")]};
 }
-function tplBenef(){
+function tplPedidos(){
   const B=swStyle(1),G=swStyle(2),M={fill:"#D6F3FA",stroke:"#2A8BA3",color:"#0D3A45"},C=swStyle(7);
   const col=i=>300+i*190,W=150;
   const N=(id,type,x,y,w,h,text,style)=>({id,type,x,y,w,h,text,style:{...style}});
@@ -858,34 +858,34 @@ function tplBenef(){
     N("cR","container",280,310,950,200,"Relatórios de Exemplo",C),
     N("cS","container",280,540,950,110,"Saídas Analíticas",C),
     N("meta","cloud",30,290,170,100,"Catálogo Demo",M),
-    N("t36","rounded",col(0),64,W,50,"FONTE_DEMO_01",B),
-    N("t51","rounded",col(3),64,W,50,"FONTE_DEMO_02",B),
-    N("t71","rounded",col(4),64,W,50,"FONTE_DEMO_03",B),
-    N("pap","rounded",col(0),214,W,50,"Pedidos",B),
-    N("agr","rounded",col(1),214,W,50,"Agregados",B),
-    N("ade","rounded",col(2),214,W,50,"Adesão",B),
-    N("pim","rounded",col(3),214,W,50,"Entrega",B),
-    N("pme","rounded",col(4),214,W,50,"Financeiro",B),
-    ...[0,1,2,3,4].map(i=>N("rel"+(i+1),"rounded",col(i),354,W,50,"Rel enriquecido",G)),
+    N("f1","rounded",col(0),64,W,50,"FONTE_DEMO_01",B),
+    N("f2","rounded",col(3),64,W,50,"FONTE_DEMO_02",B),
+    N("f3","rounded",col(4),64,W,50,"FONTE_DEMO_03",B),
+    N("p1","rounded",col(0),214,W,50,"Pedidos",B),
+    N("p2","rounded",col(1),214,W,50,"Pagamentos",B),
+    N("p3","rounded",col(2),214,W,50,"Estoque",B),
+    N("p4","rounded",col(3),214,W,50,"Entrega",B),
+    N("p5","rounded",col(4),214,W,50,"Financeiro",B),
+    ...["Rel. vendas","Rel. clientes","Rel. estoque","Rel. logística","Rel. financeiro"].map((t,i)=>N("rel"+(i+1),"rounded",col(i),354,W,50,t,G)),
     N("qry","rounded",col(0),434,W,54,"Consulta por pedido",G),
-    N("tbB","rounded",col(0),584,340,50,"Tabela de pedidos",G),
-    N("tbC","rounded",col(2),584,340,50,"Tabela de itens",G),
+    N("tbP","rounded",col(0),584,340,50,"Tabela de pedidos",G),
+    N("tbI","rounded",col(2),584,340,50,"Tabela de itens",G),
   ];
   const E=(from,to,fs=null,ts=null,st={})=>({id:"e"+uid(),from,to,text:"",fromSide:fs,toSide:ts,style:st});
   const edges=[
-    E("meta","t36","right","left"),E("meta","rel1","right","left"),E("meta","tbB","right","left"),
-    E("t36","pap","bottom","top"),E("t36","agr","bottom","top"),E("t36","ade","bottom","top"),
-    E("t51","pim","bottom","top"),E("t71","pme","bottom","top"),
-    E("pap","agr"),E("agr","ade"),E("ade","pim"),E("pim","pme"),
+    E("meta","f1","right","left"),E("meta","rel1","right","left"),E("meta","tbP","right","left"),
+    E("f1","p1","bottom","top"),E("f1","p2","bottom","top"),E("f1","p3","bottom","top"),
+    E("f2","p4","bottom","top"),E("f3","p5","bottom","top"),
+    E("p1","p2"),E("p2","p3"),E("p3","p4"),E("p4","p5"),
     E("rel1","rel2"),E("rel2","rel3"),E("rel3","rel4"),E("rel4","rel5"),
     E("rel1","qry","bottom","top",{arrowStart:"arrow"}),
-    E("tbB","tbC"),
+    E("tbP","tbI"),
   ];
   return{nodes,edges};
 }
 const TEMPLATES=[
  {n:"Em branco",d:"Comece do zero.",build:()=>({nodes:[],edges:[]})},
- {n:"Fluxo de pedidos fictícios",d:"Fontes fictícias → processamento → relatórios → tabelas finais.",build:tplBenef},
+ {n:"Fluxo de pedidos fictícios",d:"Fontes fictícias → processamento → relatórios → tabelas finais.",build:tplPedidos},
  {n:"Pipeline Medallion",d:"Fontes → Bronze → Silver → Gold, com checagem de qualidade.",build:tplMedallion},
  {n:"Fluxograma de decisão",d:"Processo com condições e caminhos sim/não.",text:"flowchart TB\nI([Início]) --> A[Receber evento]\nA --> B{Evento válido?}\nB -->|sim| C[Classificar categoria]\nB -->|não| D[Registrar motivo e descartar]\nC --> E[Enviar ao CRM]\nE --> F([Fim])\nD --> F"},
  {n:"Modelo ER",d:"Tabelas com colunas, PK/FK e cardinalidade.",text:"tabela eventos: id_evento bigint PK, email_demo string, telefone_demo string, id_canal int FK, dt_criacao timestamp\ntabela vendas: id_venda bigint PK, id_evento bigint FK, plano string, valor decimal(12,2), dt_venda date\ntabela canais: id_canal int PK, nome string, tipo string\nvendas --> eventos\neventos --> canais"},
@@ -1268,15 +1268,16 @@ let hi=0;function rotHint(){$("#hint").innerHTML=HINTS[hi++%HINTS.length]}rotHin
 /* ============ boot ============ */
 (function boot(){
   renderLib();
-  const cur=LS.get("diagran.current"),seeded=LS.get("diagran.seed")==="benef1";
+  const cur=LS.get("diagran.current"),seeded=LS.get("diagran.seed")==="pedidos1";
   if(seeded&&cur&&cur.doc&&Array.isArray(cur.doc.nodes)&&cur.doc.nodes.length){doc=cur.doc;meta=cur.meta||meta}
-  else{doc=tplBenef();meta={id:"d_"+uid(),name:"Fluxo de pedidos fictícios"};dirty=true}
-  LS.set("diagran.seed","benef1");
+  else{doc=tplPedidos();meta={id:"d_"+uid(),name:"Fluxo de pedidos fictícios"};dirty=true}
+  LS.set("diagran.seed","pedidos1");
+  /* Diagrama pronto entregue pela skill: window.DIAGRAN_TEXT (sintaxe estilo Mermaid) e window.DIAGRAN_NAME */
+  if(typeof window.DIAGRAN_TEXT==="string"&&window.DIAGRAN_TEXT.trim()){dirty=false;try{newDiagram({n:String(window.DIAGRAN_NAME||"Diagrama gerado"),text:window.DIAGRAN_TEXT})}catch(e){console.warn("DIAGRAN_TEXT inválido",e)}}
   $("#docName").value=meta.name;renderProps();
   requestAnimationFrame(()=>{fit();});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>requestRender());
   initCapabilities();
 })();
 </script>
-
 </body></html>
